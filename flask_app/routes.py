@@ -105,7 +105,10 @@ def root():
 def home():
 	print(db.query('SELECT * FROM users'))
 	x     = random.choice(['I played DIII soccer at Kalamazoo College my freshman year',
-							'I have 2 dogs.','I am a MSU CSE student.'])
+							'I have 2 dogs.',
+                            'I am a MSU CSE graduate.', 
+                            'I love baking (speficially cookies)',
+                            'I spend as much time as I can outside.'])
 	return render_template('home.html', fun_fact = x, user=getUser())
 
 @app.route("/static/<path:path>")
