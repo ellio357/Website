@@ -1,0 +1,113 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<div class="pane">
+    <div class="card">
+      <div class="card-content">
+        <div class="columns">
+            <!-- Image -->
+            <div class="column-half">
+              <div class="image">
+                <a href="https://www.linkedin.com/in/kelsiaelliott/" target="_blank">
+                  <img src="../static/main/images/social-linkedin.png" alt="Capstone Image" loading="lazy">
+                </a>
+              </div>
+            </div>
+            <!-- Description -->
+  
+          <div class="column-half"> 
+            <div class="description">
+              <h3>LinkedIn</h3>
+              
+              View my linked in for a more in-depth view of my experience! This page is to showcase reading
+              from .csv files and putting the information on a website using .sql tables and python code.
+              <br></br>
+        
+              <a href="https://www.linkedin.com/in/kelsiaelliott/" target="_blank">
+                <b>Click here to go my LinkedIn</b>
+              </a>          
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="resume-container">
+    <!-- For each institution - generate a row --> 
+    {% for inst_id, inst in resume_data.items() %}
+    <div class="institution">
+        <div class="institution-header">
+            <h1 class="institution-name">{{ inst['name'] }}</h1>
+            <div class="institution-location">
+                {% if inst['department'] %}<span>{{ inst['department'] }}</span>{% endif %}
+                {% if inst['address'] %}<span>{{ inst['address'] }}</span>{% endif %}
+                {% if inst['city'] %}<span>{{ inst['city'] }}</span>{% endif %}
+                {% if inst['state'] %}<span>{{ inst['state'] }}</span>{% endif %}
+                {% if inst['zip'] %}<span>{{ inst['zip'] }}</span>{% endif %}
+            </div>
+        </div>
+        {% if inst['positions'] != {} %}
+            {% for pos_id, pos in inst['positions'].items() %}
+            <div class="position">
+                <div class="position-header">
+                    <h2 class="position-title">{{ pos['title'] }}</h2>
+                    <div class="position-dates">
+                        {% if pos['start_date'] %}
+                            <span>{{ pos['start_date'] }}</span>
+                        {% endif %}
+                        
+                        {% if pos['start_date'] and pos['end_date'] %}
+                            <span> - </span>
+                        {% endif %}
+                        
+                        {% if pos['end_date'] %}
+                            <span>{{ pos['end_date'] }}</span>
+                        {% else %}
+                            <span>- Current</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="position-responsibilities">
+                    <p>{{ pos['responsibilities'] }}</p>
+                </div>
+                {% if pos['experiences'] != {} %}
+                    {% for exp_id, exp in pos['experiences'].items() %}
+                    <div class="experience">
+                        <h3 class="experience-name">
+                            {% if exp['hyperlink'] %}
+                                <a href="{{ exp['hyperlink'] }}">{{ exp['name'] }}</a>
+                            {% else %}
+                                {{ exp['name'] }}
+                            {% endif %}
+                        </h3>
+                        <div class="experience-description">
+                            <p>{{ exp['description'] }}</p>
+                        </div>
+                        {% if exp['skills'] != {} %}
+                            <ul class="skills-list">
+                                {% for skill_id, skill in exp['skills'].items() %}
+                                <li class="skill">
+                                    <span class="skill-name">{{ skill['name'] }}</span>
+                                    <span class="skill-level">({{ skill['skill_level'] }})</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% endif %}
+        <hr>
+    </div>
+    {% endfor %}
+    </div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,107 @@
+div.piano-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.piano-container div.piano-poem {
+    text-align: center;
+    font-family: cursive;
+    margin-bottom: 10px;
+}
+
+div.piano-container div.piano {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #c24c4c;
+    border-radius: 10px;
+    padding: 1%;
+    width: 90vw; /* Piano width scales with window */
+    max-width: 600px;
+    height: 40vh;
+    justify-content: center;
+}
+
+div.piano-container div.piano div.piano-title {
+    font-family: cursive;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+div.piano-container div.piano div.keys-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+.key {
+    position: relative; /* Ensures labels stay within the key */
+    display: flex;
+    align-items: flex-end; /* Align label to the bottom */
+    justify-content: center;
+}
+
+.white-pressed {
+    background-color: #d3d3d3 !important;
+}
+
+.black-pressed {
+    background-color: #4c4b4b !important;
+}
+
+.key-label {
+    position: absolute;
+    bottom: 5%; 
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #000000;
+    border-radius: 3px;
+    padding: 3px;
+    opacity: 0;
+}
+
+.black {
+    position: absolute;
+    width: 6%; 
+    height: 60%; 
+    background-color: #000000;
+    z-index: 2;
+}
+
+.white {
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff;
+    margin: 0 1px;
+}
+
+/* Overlay for The Great Old One */
+.great-old-one {
+    position: absolute;
+    top: 23vh;
+    width: 100%;
+    height: calc(100vh - 100px);
+    z-index: 100;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 2s; /* Fade-in effect */
+}
+
+/* Image of the Great Old One */
+.great-old-one-img {
+    width: auto; 
+    height: 75vh;
+    border: 2px solid white; /* Optional border */
+}
+

@@ -1,0 +1,125 @@
+nav {
+    height: 5vh;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(89, 154, 211);
+    font-weight: bold;
+    color: #ffffff;
+}
+.nav-left p {
+    max-width: 325px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+
+}
+
+.nav-left p:hover::after {
+    content: attr(title);
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-left: 8px;
+}
+
+
+/* Links */
+.nav-right {
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+    }
+
+    /* Link Text */
+    a {
+        margin: 0 10px;
+        color: #ffffff; 
+        text-decoration: none;
+        font-weight: bold;
+
+        /* LinkedIn logo */
+        img {
+            width: 30px;
+        }
+    }
+
+    a:hover {
+        color: #d9d6d6; 
+        opacity: 0.7;
+    }
+}
+
+/* Mobile Menu - Hidden by default */
+.menu-bar {
+    display: none;
+    margin-right: 20px;
+}
+/* Menu icon style */
+.menu-icon {
+    font-size: 2rem; 
+    cursor: pointer;
+}
+
+/* Media query for screens smaller than 650px */
+@media screen and (max-width: 650px) {
+    /* Hide the navigation links on small screens */
+    nav ul {
+        flex-direction: column;
+        position: absolute; 
+        top: 20%; 
+        width: 20%;
+        right: 1%;
+        background-color: rgb(89, 154, 211);
+        align-items: center;
+        justify-content: center;
+        
+    }
+    nav div.nav-left {
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show menu icon */
+    .menu-bar {
+        display: block;
+        cursor: pointer;
+        text-align: center;
+        color: #000000; 
+
+    }
+
+    /* When menu is toggled, show the links */
+    nav ul.show {
+        display: none;
+    }
+        
+    /* Replace LinkedIn icon with LinkedIn text */
+    nav ul a[href="https://www.linkedin.com/in/kelsiaelliott/"] img {
+        display: none; /* Hide the image for LinkedIn */
+    }
+
+    /* Add LinkedIn text for LinkedIn link */
+    nav ul a[href="https://www.linkedin.com/in/kelsiaelliott/"]::before {
+        content: "LinkedIn"; /* Add text content */
+        font-size: 16px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+
+}

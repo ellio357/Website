@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.resume-container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2vh 2vw;
+}
+
+.institution, .position, .experience {
+    margin-bottom: 2vh;
+}
+
+.institution-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.063rem solid #ddd;
+    padding-bottom: 1vh;
+    margin-bottom: 1vh;
+}
+
+.institution-name {
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.institution-location span {
+    display: block;
+    font-size: 1.5vh;
+    color: #666;
+    text-align: right;
+}
+
+.position-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vw;
+}
+
+.position-title {
+    font-size: 2vh;
+    font-weight: bold;
+    color: #444;
+    margin: 0;
+}
+
+.position-dates {
+    font-size: 1.5vh;
+    color: #666;
+    text-align: right;
+}
+
+.position-responsibilities {
+    padding-left: 2vw;
+    color: #333;
+    font-size: 1.8vh;
+    margin-top: 1vh;
+}
+
+.experience {
+    padding-left: 4vw;
+}
+
+.experience-name {
+    font-size: 2vh;
+    font-weight: bold;
+    color: #007acc;
+    margin: 0.5vh 0;
+}
+
+.experience-description {
+    font-size: 2vh;
+    color: #555;
+}
+
+.skills-list {
+    list-style-type: disc;
+    padding-left: 5vw;
+    margin-top: 0.5vh;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-level {
+    color: #777;
+    font-size: 01.5vh;
+}
+
+.experience-name a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.experience-name a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .institution-header, .position-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .institution-location span,
+    .position-dates {
+        text-align: left;
+        margin-top: 0.5vh;
+    }
+    
+    .institution-name {
+        font-size: 2.3vh;
+    }
+    
+    .position-title {
+        font-size: 1.8vh;
+    }
+}

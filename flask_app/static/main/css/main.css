@@ -1,0 +1,133 @@
+body {
+    background : white;
+    color: black;
+    height: 80vh;
+    width: 100vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    
+}
+
+a:hover {
+    color: #d9d6d6; 
+    opacity: 0.7;
+}
+
+body main {
+    align-items: center;
+}
+
+body main div.pane {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.title-card {
+    background-color: aliceblue;
+    width: 40%;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+div.card {
+    background-color: aliceblue;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+div.card-content {
+    padding: 10px;
+}
+
+div.columns {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+
+}
+
+div.column-half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.column-half.image {
+    flex: 0 0 50%;
+}
+
+/* Right side takes the rest */
+.column-half.description {
+    flex: 1;
+    background-color: #d8d2d2;
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+div.image {
+    max-width: 100%;
+    height: auto;
+}
+
+div.image img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
+
+
+h3 {
+    font-size: large;
+}
+
+
+/* Media query for screens smaller than 100px */
+@media screen and (max-width: 650px) {
+    div.columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.image {
+        width: fit-content;
+        display: flex;
+        height:50%;
+    }
+    
+    body main div.column-half div.image img {
+        height: auto;
+        max-width: 70vw;
+    }
+
+    div.description {
+        overflow-y: scroll;
+        padding: 15px;
+        font-size: small;
+    }
+
+    div.desccription h3 {
+        text-align: center;
+        font-size: medium;
+    }
+}

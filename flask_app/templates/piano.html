@@ -1,0 +1,42 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<div class="piano-container">
+    <div class="piano-poem">
+        <h2>"Behold piano great and old, its master slumbers in far off cold,  
+        If you wish to see anew, call out to it - we see you."</h2>
+    </div>
+
+    <div class="piano">
+        <div class="piano-title">The Great Old One</div>
+        <div class="keys-container">
+            <!-- White keys -->
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+            <div class="key white"></div>
+
+            <!-- Black Keys-->
+            <div class="key black" style="left: 7%;"></div>
+            <div class="key black" style="left: 17%;"></div>
+        
+            <div class="key black" style="left: 37%;"></div>
+            <div class="key black" style="left: 47%;"></div>
+            <div class="key black" style="left: 57%;"></div>
+
+            <div class="key black" style="left: 77%;"></div>
+            <div class="key black" style="left: 87%;"></div>
+        </div>
+    </div>
+</div>
+
+<script defer src="../static/piano/js/piano.js"></script>   <!-- Piano JavaScript -->
+
+{% endblock %}

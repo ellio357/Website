@@ -1,0 +1,67 @@
+{% extends 'shared/layout.html' %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+
+{% block maincontent %}
+    <br><br>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <div class="buttons-container">
+            <label>
+                <input type="checkbox" id="newUser" name="newUser"> New User?
+            </label><br>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <div id="error-message"></div>
+    <br><br>
+
+    <!-- Display the error message if it exists -->
+    {% if error %}
+        <div class="debug">
+            <p><strong>Error:</strong> {{ error }}</p>
+        </div>
+    {% endif %}
+
+    <div class="pane">
+        <div class="card">
+        <div class="card-content">
+            <div class="columns">
+                <!-- Image -->
+                <div class="column-half">
+                <div class="image">
+                    <a href="https://caden-james.github.io/CSE498-Turing/Dev/Frontend/board.html" target="_blank">
+                    <img src="../static/main/images/chat.png" alt="Capstone Image" loading="lazy">
+                    </a>
+                </div>
+                </div>
+                <!-- Description -->
+    
+            <div class="column-half"> 
+                <div class="description">
+                    <h3>How to Use Chat Feature</h3>
+                
+                    <p><b>1. Use example logins</b></p> 
+                    <p><smaller-font>&emsp; Email: owner@email.com Password: password</smaller-font></p>
+                    <p><smaller-font>&emsp; Email: guest@email.com Password: password</smaller-font></p>
+
+                    <p><b>2. Create your own login</b></p> 
+                    <p><smaller-font>&emsp; * Fill out email and password boxes</smaller-font></p>
+                    <p><smaller-font>&emsp; &emsp; * Example: Email: example@email.com Password: 12345</smaller-font></p>
+                    <p><smaller-font>&emsp; * Check new user box</smaller-font></p>
+                    <p><smaller-font>&emsp; * Click login</smaller-font></p>
+                </div>
+            </div> 
+            </div>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

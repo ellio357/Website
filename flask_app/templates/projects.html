@@ -1,0 +1,112 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+
+<div class="pane">
+  <div class="title-card">
+    <div class="card-content">
+      <h2>Projects</h2>
+    </div>
+  </div>
+</div>
+
+<!-- CSE 498 Capstone -->
+<div class="pane">
+  <div class="card">
+    <div class="card-content">
+      <div class="columns">
+          <!-- Image -->
+          <div class="column-half">
+            <div class="image">
+              <a href="https://caden-james.github.io/CSE498-Turing/Dev/Frontend/board.html" target="_blank">
+                <img src="../static/main/images/capstone.png" alt="Capstone Image" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <!-- Description -->
+
+        <div class="column-half"> 
+          <div class="description">
+            <h3>Senior Capstone Project</h3>
+            
+            Worked with 4 other teammates to build out a task manager web application. 
+            This project utilized, C++ for the backend, and HTML/css/java for the front
+            -end. 
+            <br></br>
+      
+            <a href="https://caden-james.github.io/CSE498-Turing/Dev/Frontend/board.html" target="_blank">
+              <b>Click here to go to the project.</b>
+            </a> 
+            <br></br>
+            <a href="https://github.com/CSE498/CSE498-Spring2025/tree/main/Group-08" target="_blank">
+              <b>Click here to go to the project source code.</b>
+            </a>          
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Piano Project -->
+<div class="pane">
+  <div class="card">
+    <div class="card-content">
+      <div class="columns">
+          <!-- Image -->
+          <div class="column-half">
+            <div class="image">
+              <a href="/piano" target="_blank">
+                <img src="../static/main/images/piano.jpeg" target="_blank"
+                alt="Piano Image" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <!-- Description -->
+          <div class="column-half"> 
+            <div class="description">
+                <h3>Piano Project</h3>
+                This project involved creating an interactive digital piano.
+                HTML, CSS, and javascript were all ultilized to produce the 
+                final product.
+
+                <a href="/piano" target="_blank"> <br> <b>Click here to go 
+                    to the project.</b> </br> </a>
+            </div>
+          </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CSE 435 ADB -->
+<div class="pane">
+  <div class="card">
+    <div class="card-content">
+      <div class="columns">
+          <!-- Image -->
+          <div class="column-half">
+            <div class="image">
+              <a href="https://www.cse.msu.edu/~robsonj3/" target="_blank">
+                <img src="../static/main/images/prototype.png" alt="Piano Image" loading="lazy">
+              </a>
+            </div>
+          </div>
+          <!-- Description -->
+
+        <div class="column-half"> 
+          <div class="description">
+            <h3>ADB Project</h3>
+            The Automated Driving Beam project aimed to created a prototype 
+            of dynamic headlights for the customer Flex-N-Gate.
+
+            <a href="https://www.cse.msu.edu/~robsonj3/" target="_blank"> <br> <b>Click here to go 
+                to the project.</b> </br> </a>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

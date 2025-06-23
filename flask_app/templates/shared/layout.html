@@ -1,0 +1,83 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelsi Elliott's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css')}}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css')}}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css')}}">
+
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/feedback.css')}}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='piano/css/piano.css')}}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/chat.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/login.css') }}">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/login.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/chat.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- Header  -->
+    <header>
+      <div class="banner-container">
+        <img src="../../static/main/images/banner.jpg" alt="Banner Image" class="banner-image" loading="lazy">
+      </div>
+    </header>
+
+    <!-- Nav Bar -->
+    <nav>
+      <div class="nav-left">
+      {% if user == 'Unknown' %}  
+      <p>Kelsi Elliott's Website</p>
+      {% else %}
+      <p title="{{user}}">Logged in as {{user}}</p>
+      {% endif %}
+      <br>
+      </div>
+      
+
+      <div class="nav-right">
+        <ul>
+          <a href="/home">Home</a>
+          <a href="/resume">Resume</a>
+          <a href="/projects">Projects</a>
+          <a href="/chat">Chat</a>
+          <a href="/login">Login</a>
+          <a href="/logout">Logout</a>
+          <a href="/users">users</a>
+          <a href="https://www.linkedin.com/in/kelsiaelliott/">
+            <img src="../static/main/images/social-linkedin.png" alt="LinkedIn">
+          </a>
+        </ul>
+        <!-- Mobile Menu -->
+        <div class="menu-bar">
+          <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">&#9776;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Kelsi A. Elliott</p>
+    </footer>
+
+    </article>
+  
+</body>
+
+</html>
